@@ -1,0 +1,38 @@
+[
+{
+    "pk": 1,
+    "model": "auth.user",
+    "fields": {
+        "is_active": true,
+        "is_superuser": false,
+        "user_permissions": [],
+        "date_joined": "2015-05-21T06:54:24.097Z",
+        "is_staff": false,
+        "username": "fcorkery",
+        "last_login": null,
+        "email": "weffertz@mclaughlin.info",
+        "first_name": "",
+        "groups": [],
+        "last_name": "",
+        "password": "pbkdf2_sha256$20000$ugtDpiiuaBvu$64Vik/QzBbDa9m7Z5fJXptnrr5shaolaD7KxH20uaGk="
+    }
+},
+{
+    "pk": 2,
+    "model": "auth.user",
+    "fields": {
+        "is_active": true,
+        "is_superuser": true,
+        "user_permissions": [],
+        "date_joined": "2015-05-21T10:57:25.799Z",
+        "is_staff": true,
+        "username": "admin",
+        "last_login": "2015-05-26T09:54:06.091Z",
+        "email": "dfjiosf@jdfosf.com",
+        "first_name": "",
+        "groups": [],
+        "last_name": "",
+        "password": "pbkdf2_sha256$20000$feiG2fST1cN3$RBQzpWwlDc5XfIkRJRkbOXpVHEillhyYesFsF9FSh9E="
+    }
+}
+]

@@ -1,0 +1,1 @@
+[{"fields": {"color": "#e9f4ea", "name": "Tomates"}, "pk": 1, "model": "especies.especies"}, {"fields": {"color": "#60ab00", "name": "Lechuga"}, "pk": 2, "model": "especies.especies"}, {"fields": {"color": "#17d0d1", "name": "Pepino"}, "pk": 3, "model": "especies.especies"}, {"fields": {"color": "#dee3dc", "name": "Puerro"}, "pk": 4, "model": "especies.especies"}]
