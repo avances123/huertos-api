@@ -5,7 +5,7 @@ PyYAML==3.11
 colorama==0.3.3
 dj-database-url==0.3.0
 dj-static==0.0.6
-django-activity-stream==0.5.1
+-e git://github.com/justquick/django-activity-stream@9de8f247892b379473878b379a0a43614cc370f4#egg=django_activity_stream-master
 django-braces==1.8.0
 django-cors-headers==1.1.0
 django-filter==0.9.2
