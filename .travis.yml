@@ -5,8 +5,15 @@ python:
   - "3.4"
   - "nightly"
 
+env:
+  - DJANGO_VERSION=1.7
+  - DJANGO_VERSION=1.8.2
+
 services:
   - "postgresql"
 
-install: "pip install -r requirements.txt"
+install: 
+  - "pip install -r requirements.txt"
+  - "pip install -q Django==$DJANGO_VERSION"
+
 script: "python manage.py test"
