@@ -4,7 +4,6 @@ from huertos.settings.base import *
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
-DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
 
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()

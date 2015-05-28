@@ -40,7 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    #'django.contrib.staticfiles',
+    'django.contrib.staticfiles',
     'django.contrib.gis',
     'corsheaders',
     'rest_framework',
@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'huertos.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'huertos',                      
         'HOST': '',
         'PORT': 5432

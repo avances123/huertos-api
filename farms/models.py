@@ -1,4 +1,4 @@
-from django.contrib.gis.db import models
+from django.db import models
 from django.contrib.auth.models import User
 from especies.models import Especies
 from django.db.models.signals import post_save
@@ -16,8 +16,6 @@ class Farm(models.Model):
     width   = models.FloatField(default=4.0)
     height  = models.FloatField(default=2.0)
 
-    poly   = models.PolygonField(null=True,blank=True)
-    objects = models.GeoManager()
 
     def __str__(self):
         return "{0} ({1} zones)".format(self.name,self.zone_set.count())

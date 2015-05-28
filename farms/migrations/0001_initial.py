@@ -8,7 +8,7 @@ from django.conf import settings
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('especies', '0002_especies_color'),
+        ('especies', '0003_especies_interval_regar'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Farm',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, primary_key=True, auto_created=True)),
                 ('name', models.CharField(max_length=60)),
                 ('width', models.FloatField(default=4.0)),
                 ('height', models.FloatField(default=2.0)),
@@ -26,11 +26,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Zone',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
-                ('sizex', models.PositiveSmallIntegerField()),
-                ('sizey', models.PositiveSmallIntegerField()),
-                ('col', models.PositiveSmallIntegerField()),
-                ('row', models.PositiveSmallIntegerField()),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, primary_key=True, auto_created=True)),
+                ('sizex', models.PositiveSmallIntegerField(default=2)),
+                ('sizey', models.PositiveSmallIntegerField(default=2)),
+                ('col', models.PositiveSmallIntegerField(default=0)),
+                ('row', models.PositiveSmallIntegerField(default=0)),
                 ('especies', models.ForeignKey(to='especies.Especies', null=True)),
                 ('farm', models.ForeignKey(to='farms.Farm')),
             ],
