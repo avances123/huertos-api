@@ -2,7 +2,7 @@ from rest_framework import serializers
 from actstream.models import Action
 from django.contrib.auth.models import User
 from farms.models import Farm
-
+from farms.serializers import FarmSerializer
 
 
 class ActorField(serializers.RelatedField):
@@ -21,7 +21,8 @@ class ActionObjectField(serializers.RelatedField):
 
     def to_representation(self, value):
         if isinstance(value, Farm):
-            return str(value)
+            serializer = FarmSerializer(value)
+            return serializer.data
         raise Exception('Unexpected type of actor object')
 
 
