@@ -7,6 +7,8 @@ from django.contrib.auth.models import User
 from farms.models import Farm,Zone
 from farms.serializers import FarmSerializer
 from collections import OrderedDict
+from actstream.models import action_object_stream
+
 
 
 ###### Module configs and inits
@@ -106,6 +108,7 @@ class FarmApiTest(APITestCase):
         url = reverse('farm-regar',kwargs={'pk': self.farm.id})
         response = self.client.post(url, {},format='json')
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+        self.assertQuerysetEqual(self.farm.action_object_actions.all(),['regar','created'],transform=lambda x:x.verb)
 
 
 

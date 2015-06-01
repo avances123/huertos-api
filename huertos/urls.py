@@ -6,7 +6,7 @@ from actions.views import ActionViewSet
 
 router = routers.SimpleRouter(trailing_slash=False)
 router.register(r'farms', FarmViewSet)
-router.register(r'zones', ZoneViewSet)
+#router.register(r'zones', ZoneViewSet)
 router.register(r'actions', ActionViewSet)
 
 
