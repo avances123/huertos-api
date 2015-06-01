@@ -9,6 +9,7 @@ from rest_framework import status
 from farms.permissions import IsOwnerOrReadOnly
 from farms.filters import FarmFilter
 from actstream.models import following
+from actstream.actions import follow
 
 
 
@@ -27,6 +28,12 @@ class FarmViewSet(viewsets.ModelViewSet):
     def regar(self, request, pk=None):
         instance = self.get_object()
         action.send(instance.owner, verb='regar',action_object=instance,color="#348923")
+        return Response(None,status=status.HTTP_204_NO_CONTENT)
+
+    @detail_route(methods=['post'],permission_classes=[])
+    def follow(self, request, pk=None):
+        instance = self.get_object()
+        follow(request.user,instance,actor_only=False)
         return Response(None,status=status.HTTP_204_NO_CONTENT)
 
     @list_route(methods=['get'])
