@@ -110,6 +110,20 @@ class FarmApiTest(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertQuerysetEqual(self.farm.action_object_actions.all(),['regar','created'],transform=lambda x:x.verb)
 
+    def test_filter_my_huertos(self):
+        other_user = User.objects.create_user(username=fake.user_name(),password=fake.password(),email=fake.email())
+        Farm.objects.create(owner=other_user,name=fake.md5())
+
+        from django.http import QueryDict
+        qdict = QueryDict('',mutable=True)
+        qdict.update({'owner__username':self.user.username})
+
+        url = reverse('farm-list') + '?' + qdict.urlencode()
+        response = self.client.get(url,format='json')
+        self.assertEqual(len(response.data),Farm.objects.filter(owner=self.user).count())
+
+
+
 
 
 

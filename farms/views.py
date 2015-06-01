@@ -7,7 +7,7 @@ from actstream import action
 from rest_framework.response import Response
 from rest_framework import status
 from farms.permissions import IsOwnerOrReadOnly
-
+from farms.filters import FarmFilter
 
 
 
@@ -20,7 +20,8 @@ class FarmViewSet(viewsets.ModelViewSet):
     queryset           = Farm.objects.all()
     serializer_class   = FarmSerializer
     permission_classes = (IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly)
-
+    filter_class       = FarmFilter
+    
     @detail_route(methods=['post'])
     def regar(self, request, pk=None):
         instance = self.get_object()
