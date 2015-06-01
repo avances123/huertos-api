@@ -15,7 +15,11 @@ class ActorField(serializers.RelatedField):
 class TargetField(serializers.RelatedField):
 
     def to_representation(self, value):
-        return "kakoasdfas"
+        if isinstance(value, Farm):
+            serializer = FarmSerializer(value)
+            return serializer.data
+        else:
+            return "No es un huerto"
 
 class ActionObjectField(serializers.RelatedField):
 
@@ -23,7 +27,7 @@ class ActionObjectField(serializers.RelatedField):
         if isinstance(value, Farm):
             serializer = FarmSerializer(value)
             return serializer.data
-        raise Exception('Unexpected type of actor object')
+        raise Exception('Unexpected type of action_object')
 
 
 class ActionSerializer(serializers.ModelSerializer):

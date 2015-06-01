@@ -11,6 +11,7 @@ from actstream.models import action_object_stream
 
 
 
+
 ###### Module configs and inits
 fake = Factory.create('es_ES')
 ######
@@ -121,9 +122,6 @@ class FarmApiTest(APITestCase):
         url = reverse('farm-list') + '?' + qdict.urlencode()
         response = self.client.get(url,format='json')
         self.assertEqual(len(response.data),Farm.objects.filter(owner=self.user).count())
-
-
-
 
 
 

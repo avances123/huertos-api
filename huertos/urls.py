@@ -1,13 +1,12 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 from rest_framework import routers
-from farms.views import FarmViewSet,ZoneViewSet
-from actions.views import ActionViewSet
+from farms.views import FarmViewSet
+from actions.views import AllFarmActions
 
 router = routers.SimpleRouter(trailing_slash=False)
 router.register(r'farms', FarmViewSet)
-#router.register(r'zones', ZoneViewSet)
-router.register(r'actions', ActionViewSet)
+#router.register(r'actions', ActionViewSet)
 
 
 
@@ -21,4 +20,6 @@ urlpatterns = [
     url(r'^activity/', include('actstream.urls')),
 
     url(r'^api/', include(router.urls)),
+    url(r'^api/actions-farm-all', AllFarmActions.as_view(),name="actions-farm-all"),
+
 ]
