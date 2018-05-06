@@ -1,6 +1,4 @@
-from rest_framework import status
 from rest_framework.test import APITestCase
-from django.core.urlresolvers import reverse
 from faker import Factory
 from django.contrib.auth import get_user_model
 from users.models import Farmer

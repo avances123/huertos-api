@@ -1,15 +1,11 @@
 from rest_framework import status
-from django.test import override_settings
 from rest_framework.test import APITestCase
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from faker import Factory
 from django.contrib.auth.models import User
 from farms.models import Farm,Zone
 from farms.serializers import FarmSerializer
 from collections import OrderedDict
-from actstream.models import action_object_stream
-
-
 
 
 ###### Module configs and inits
