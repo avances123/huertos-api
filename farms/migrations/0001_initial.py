@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=60)),
                 ('width', models.FloatField(default=4.0)),
                 ('height', models.FloatField(default=2.0)),
-                ('owner', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
+                ('owner', models.ForeignKey(to=settings.AUTH_USER_MODEL,on_delete=models.CASCADE,)),
             ],
         ),
         migrations.CreateModel(
@@ -31,8 +31,8 @@ class Migration(migrations.Migration):
                 ('sizey', models.PositiveSmallIntegerField(default=2)),
                 ('col', models.PositiveSmallIntegerField(default=0)),
                 ('row', models.PositiveSmallIntegerField(default=0)),
-                ('especies', models.ForeignKey(to='especies.Especies', null=True)),
-                ('farm', models.ForeignKey(to='farms.Farm')),
+                ('especies', models.ForeignKey(to='especies.Especies',on_delete=models.CASCADE, null=True)),
+                ('farm', models.ForeignKey(to='farms.Farm',on_delete=models.CASCADE,)),
             ],
         ),
     ]

@@ -5,7 +5,7 @@ from django.db.models.signals import post_save
 
 
 class Farmer(models.Model):
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(User,on_delete=models.CASCADE)
     # extend model here
 
 

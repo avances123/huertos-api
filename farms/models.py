@@ -9,7 +9,7 @@ class Farm(models.Model):
     """
     The big rectangle
     """
-    owner   = models.ForeignKey(User)
+    owner   = models.ForeignKey(User,on_delete=models.CASCADE)
     name    = models.CharField(max_length=60)
 
     # lat lon geodjango field
@@ -25,8 +25,8 @@ class Zone(models.Model):
     """
     Each litlle rectangle inside the Farm
     """
-    farm     = models.ForeignKey(Farm)
-    especies = models.ForeignKey(Especies,null=True)
+    farm     = models.ForeignKey(Farm,on_delete=models.CASCADE)
+    especies = models.ForeignKey(Especies,on_delete=models.CASCADE,null=True)
 
     # layout
     sizex    = models.PositiveSmallIntegerField(default=2)

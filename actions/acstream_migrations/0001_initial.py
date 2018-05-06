@@ -26,9 +26,9 @@ class Migration(migrations.Migration):
                 ('action_object_object_id', models.CharField(blank=True, max_length=255, null=True)),
                 ('timestamp', models.DateTimeField(default=django.utils.timezone.now)),
                 ('public', models.BooleanField(default=True)),
-                ('action_object_content_type', models.ForeignKey(related_name='action_object', blank=True, null=True, to='contenttypes.ContentType')),
-                ('actor_content_type', models.ForeignKey(related_name='actor', to='contenttypes.ContentType')),
-                ('target_content_type', models.ForeignKey(related_name='target', blank=True, null=True, to='contenttypes.ContentType')),
+                ('action_object_content_type', models.ForeignKey(related_name='action_object',on_delete=models.CASCADE, blank=True, null=True, to='contenttypes.ContentType')),
+                ('actor_content_type', models.ForeignKey(related_name='actor',on_delete=models.CASCADE, to='contenttypes.ContentType')),
+                ('target_content_type', models.ForeignKey(related_name='target', blank=True, null=True,on_delete=models.CASCADE, to='contenttypes.ContentType')),
             ],
             options={
                 'ordering': ('-timestamp',),
@@ -41,8 +41,8 @@ class Migration(migrations.Migration):
                 ('object_id', models.CharField(max_length=255)),
                 ('actor_only', models.BooleanField(verbose_name='Only follow actions where the object is the target.', default=True)),
                 ('started', models.DateTimeField(default=django.utils.timezone.now)),
-                ('content_type', models.ForeignKey(to='contenttypes.ContentType')),
-                ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
+                ('content_type', models.ForeignKey(to='contenttypes.ContentType',on_delete=models.CASCADE,)),
+                ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL,on_delete=models.CASCADE,)),
             ],
         ),
         migrations.AlterUniqueTogether(

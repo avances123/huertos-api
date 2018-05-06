@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             name='Farmer',
             fields=[
                 ('id', models.AutoField(serialize=False, verbose_name='ID', primary_key=True, auto_created=True)),
-                ('user', models.OneToOneField(to=settings.AUTH_USER_MODEL)),
+                ('user', models.OneToOneField(to=settings.AUTH_USER_MODEL,on_delete=models.CASCADE)),
             ],
         ),
     ]

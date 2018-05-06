@@ -2,6 +2,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from rest_framework import routers
 from farms.views import FarmViewSet
+from rest_framework_jwt.views import obtain_jwt_token
 from actions.views import AllFarmActions
 
 router = routers.SimpleRouter(trailing_slash=False)
@@ -13,9 +14,9 @@ router.register(r'farms', FarmViewSet)
 
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^docs/', include('rest_framework_swagger.urls')),
-    url(r'^auth/login/', 'rest_framework_jwt.views.obtain_jwt_token'),
+    url(r'^admin/', admin.site.urls),
+    #url(r'^docs/', include('rest_framework_swagger.urls')),
+    url(r'^auth/login/', obtain_jwt_token),
     url(r'^auth/', include('djoser.urls')),
     url(r'^activity/', include('actstream.urls')),
 
