@@ -8,16 +8,18 @@ class ZoneSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Zone
+        fields = '__all__'
 
 
 
 class FarmSerializer(serializers.ModelSerializer):
     #zone_set = ZoneSerializer(many=True,read_only=True)
     zone_set = ZoneSerializer(many=True)
+    
 
     class Meta:
         model = Farm
-
+        fields = '__all__'
 
     def create(self, validated_data):
         validated_data.pop('zone_set') # Siempre creamos una farm sin zonas
