@@ -17,7 +17,7 @@ from actstream.actions import follow
 
 class FarmViewSet(viewsets.ModelViewSet):
     """
-    A simple ViewSet for viewing and editing accounts.
+    A simple ViewSet for viewing and editing farms.
     """
     queryset           = Farm.objects.all()
     serializer_class   = FarmSerializer
