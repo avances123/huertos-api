@@ -29,10 +29,10 @@ class Zone(models.Model):
     especies = models.ForeignKey(Especies,on_delete=models.CASCADE,null=True)
 
     # layout
-    sizex    = models.PositiveSmallIntegerField(default=2)
-    sizey    = models.PositiveSmallIntegerField(default=2)
-    col      = models.PositiveSmallIntegerField(default=0)
-    row      = models.PositiveSmallIntegerField(default=0)
+    cols    = models.PositiveSmallIntegerField(default=2)
+    rows    = models.PositiveSmallIntegerField(default=2)
+    x       = models.PositiveSmallIntegerField(default=0)
+    y       = models.PositiveSmallIntegerField(default=0)
 
 
 
