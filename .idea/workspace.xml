@@ -2,18 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f45be63d-c112-4762-9c83-b5da78caebaf" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions/acstream_migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions/acstream_migrations/0002_auto_20150527_1319.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions/acstream_migrations/0003_auto_20150601_1839.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions/acstream_migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions/serializers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions/views.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/huertos/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/huertos/settings/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/huertos/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/huertos/urls.py" afterDir="false" />
     </list>
@@ -29,7 +17,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="tests.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tests.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/farms/tests.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-380">
@@ -41,8 +29,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/huertos/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="41" selection-start-line="16" selection-end-line="17" />
+            <state relative-caret-position="266">
+              <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -84,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="base.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/huertos/settings/base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-95">
-              <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+            <state relative-caret-position="460">
+              <caret line="132" column="71" selection-start-line="132" selection-start-column="71" selection-end-line="132" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -113,7 +101,7 @@
         <entry file="file://$PROJECT_DIR$/especies/admin.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="76">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -131,6 +119,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>rever</find>
+      <find>jwt</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -586,7 +575,7 @@
     <entry file="file://$PROJECT_DIR$/especies/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
@@ -595,23 +584,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/huertos/settings/local.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/huertos/settings/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-95">
-          <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/huertos/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="41" selection-start-line="16" selection-end-line="17" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/farms/views.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -636,6 +608,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-380">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/huertos/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/huertos/settings/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="132" column="71" selection-start-line="132" selection-start-column="71" selection-end-line="132" selection-end-column="71" />
         </state>
       </provider>
     </entry>

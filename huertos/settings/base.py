@@ -143,21 +143,3 @@ REST_FRAMEWORK = {
 
 
 CORS_ORIGIN_ALLOW_ALL = True
-#CORS_URLS_REGEX = r'^/api/rest-auth/registration/$'
-
-
-# DJOSER = {
-    
-#     'LOGIN_AFTER_REGISTRATION': True,
-# }
-
-# http://getblimp.github.io/django-rest-framework-jwt/
-JWT_AUTH = {
-    'JWT_AUTH_HEADER_PREFIX': 'Bearer',
-    'JWT_EXPIRATION_DELTA': timedelta(hours=3),
-}
-
-
-ACTSTREAM_SETTINGS = {
-    'USE_JSONFIELD': True,
-}
