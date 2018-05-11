@@ -55,7 +55,6 @@ INSTALLED_APPS = (
     'users',
     'farms',
     'especies',
-    'actions',
 )
 
 MIDDLEWARE = (
@@ -161,9 +160,4 @@ JWT_AUTH = {
 
 ACTSTREAM_SETTINGS = {
     'USE_JSONFIELD': True,
-}
-
-# actstream va con south y se rompian las migraciones, lo he hecho a mano
-MIGRATION_MODULES = {
-    'actstream':'actions.acstream_migrations'
 }
