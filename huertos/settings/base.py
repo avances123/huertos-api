@@ -94,7 +94,7 @@ WSGI_APPLICATION = 'huertos.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'huertos',                      
         'HOST': '',
         'PORT': 5432
@@ -137,9 +137,5 @@ REST_FRAMEWORK = {
     ),
 
 }
-
-
-
-
 
 CORS_ORIGIN_ALLOW_ALL = True
