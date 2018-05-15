@@ -22,7 +22,7 @@ class FarmApiTest(APITestCase):
         self.client.force_authenticate(user=self.user)
 
         self.farm = Farm.objects.create(owner=self.user,name=fake.md5())
-        self.zones = [Zone.objects.create(farm=self.farm,sizex=fake.random_int(1,20),sizey=fake.random_int(1,20),col=fake.random_int(1,50),row=fake.random_int(1,50)) for i in range(10)]
+        self.zones = [Zone.objects.create(farm=self.farm,cols=fake.random_int(1,20),rows=fake.random_int(1,20),x=fake.random_int(1,50),y=fake.random_int(1,50)) for i in range(10)]
 
             
     #####################################################
@@ -39,7 +39,7 @@ class FarmApiTest(APITestCase):
     #@override_settings()
     def test_post_farm(self):
         url = reverse('farm-list')
-        data = {'owner':self.user.id,'width':3.0,'height':6.0,'name':fake.md5(),'zone_set':[]}
+        data = {'owner':self.user.id,'name':fake.md5(),'zone_set':[]}
         response = self.client.post(url, data,format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
@@ -52,20 +52,16 @@ class FarmApiTest(APITestCase):
     def test_put_farm_same_zones(self):
         url = reverse('farm-detail',kwargs={'pk': self.farm.id})
         serializer = FarmSerializer(self.farm)
-        data = {'owner':self.user.id,'width':3.0,'height':6.0,'name':fake.md5(),'zone_set': serializer.data['zone_set']}
+        data = {'owner':self.user.id,'name':fake.md5(),'zone_set': serializer.data['zone_set']}
         response = self.client.put(url, data,format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-
-        farm = Farm.objects.get(id=self.farm.id)
-        self.assertEqual(farm.width, 3.0)
-        self.assertEqual(farm.height, 6.0)
 
     
     def test_put_farm_add_zone(self):
         url = reverse('farm-detail',kwargs={'pk': self.farm.id})
         serializer = FarmSerializer(self.farm)
-        serializer.data['zone_set'].append(OrderedDict([('especies', None), ('sizex', 8), ('sizey', 17), ('col', 42), ('row', 5), ('farm', self.farm.id)]))
-        data = {'owner':self.user.id,'width':3.0,'height':6.0,'name':fake.md5(),'zone_set': serializer.data['zone_set']}
+        serializer.data['zone_set'].append(OrderedDict([('especies', None), ('cols', 8), ('rows', 17), ('x', 42), ('y', 5), ('farm', self.farm.id)]))
+        data = {'owner':self.user.id,'name':fake.md5(),'zone_set': serializer.data['zone_set']}
         response = self.client.put(url, data,format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
@@ -77,8 +73,8 @@ class FarmApiTest(APITestCase):
         url = reverse('farm-detail',kwargs={'pk': self.farm.id})
         serializer = FarmSerializer(self.farm)
         zone = serializer.data['zone_set'][0] 
-        serializer.data['zone_set'][0] = OrderedDict([('id',zone['id']),('especies', None), ('sizex', 2), ('sizey', 2), ('col', 2), ('row', 2), ('farm', self.farm.id)])
-        data = {'owner':self.user.id,'width':3.0,'height':6.0,'name':fake.md5(),'zone_set': serializer.data['zone_set']}
+        serializer.data['zone_set'][0] = OrderedDict([('id',zone['id']),('especies', None), ('cols', 2), ('rows', 2), ('x', 2), ('y', 2), ('farm', self.farm.id)])
+        data = {'owner':self.user.id,'name':fake.md5(),'zone_set': serializer.data['zone_set']}
         response = self.client.put(url, data,format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
@@ -89,7 +85,7 @@ class FarmApiTest(APITestCase):
         url = reverse('farm-detail',kwargs={'pk': self.farm.id})
         serializer = FarmSerializer(self.farm)
         data= serializer.data['zone_set'][1:]
-        data = {'owner':self.user.id,'width':3.0,'height':6.0,'name':fake.md5(),'zone_set': data}
+        data = {'owner':self.user.id,'name':fake.md5(),'zone_set': data}
         response = self.client.put(url, data,format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
