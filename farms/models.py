@@ -1,4 +1,4 @@
-from django.db import models
+from django.contrib.gis.db import models
 from django.contrib.auth.models import User
 from especies.models import Especies
 from django.db.models.signals import post_save
@@ -12,9 +12,7 @@ class Farm(models.Model):
     owner   = models.ForeignKey(User,on_delete=models.CASCADE)
     name    = models.CharField(max_length=60)
 
-    # lat lon geodjango field
-    width   = models.FloatField(default=4.0)
-    height  = models.FloatField(default=2.0)
+    mpoly = models.MultiPolygonField(null=True)
 
 
     def __str__(self):
