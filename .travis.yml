@@ -6,8 +6,9 @@ python:
 env:
   - DJANGO_VERSION=Django==2.0.5
 
-services:
-  - "postgresql"
+addons:
+  postgresql: "10"
+
 
 before_script:
   - psql -U postgres -c "create extension postgis"
