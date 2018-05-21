@@ -14,7 +14,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^auth/', include('djoser.urls')),
     url(r'^auth/', include('djoser.urls.jwt')),
-    url(r'^activity/', include('actstream.urls')),
     url(r'^api/', include(router.urls)),
 
 ]

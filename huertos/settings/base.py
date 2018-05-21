@@ -50,7 +50,6 @@ INSTALLED_APPS = (
     #'rest_framework.authtoken',
     'rest_framework_swagger',
     'djoser', # auth with drf
-    'actstream',
 
     'users',
     'farms',
