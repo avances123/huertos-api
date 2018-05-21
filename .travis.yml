@@ -9,6 +9,9 @@ env:
 services:
   - "postgresql"
 
+before_script:
+  - psql -U postgres -c "create extension postgis"
+
 install: 
   - "pip install -r requirements.txt"
   - "pip install -q $DJANGO_VERSION"
