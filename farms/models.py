@@ -23,7 +23,7 @@ class Zone(models.Model):
     """
     farm     = models.ForeignKey(Farm,on_delete=models.CASCADE)
     especies = models.ForeignKey(Especies,on_delete=models.CASCADE,null=True)
-
+    last_water = models.DateTime
     # layout
     cols    = models.PositiveSmallIntegerField(default=2)
     rows    = models.PositiveSmallIntegerField(default=2)
